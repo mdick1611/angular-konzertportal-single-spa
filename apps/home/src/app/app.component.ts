@@ -1,34 +1,39 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/filter';
 
-declare const location: any;
+import { Concert } from './concert';
 
 @Component({
   selector: 'home-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private ngZone: NgZone) {
+  private concertsUrl = './assets/concerts.json';
 
-  }
+  concerts : Concert [];
+  featured : Concert [];
 
-  getHelpUrl(): string {
-    let helpUrl;
-    const match = location.href.match(/help=(open|close)/);
-    const isOpen = match && match[1] === 'open';
-    if (isOpen) {
-      helpUrl = location.href.replace('help=open', 'help=close');
-    } else {
-      if (match) {
-        helpUrl = location.href.replace('help=close', 'help=open');
-      } else if (location.href.match(/\?/)) {
-        helpUrl = `${location.href}&help=open`;
-      } else {
-        helpUrl = `${location.href}?help=open`;
-      }
-    }
-    return helpUrl;
+  constructor (private httpService: HttpClient) {}
+
+  ngOnInit() {
+    this.httpService.get(this.concertsUrl)
+      .subscribe(
+        data => {
+          this.concerts = data["concerts"] as Concert [];
+          this.featured = this.concerts.filter((concert) => concert.featured);
+          console.log(this.featured);
+        },
+        (err: HttpErrorResponse) => {
+          console.log (err.message);
+        }
+      );
+
   }
 
 }

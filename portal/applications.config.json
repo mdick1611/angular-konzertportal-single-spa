@@ -11,17 +11,5 @@
         "baseHref": "/home",
         "matchRoute": "/home/",
         "isDefaultApp": true
-    },
-    {
-        "name": "app1",
-        "selector": "app1-root",
-        "baseHref": "/app1",
-        "matchRoute": "/app1/"
-    },
-    {
-        "name": "help",
-        "selector": "help-root",
-        "baseHref": "/help",
-        "matchRoute": "help=open"
     }
 ]

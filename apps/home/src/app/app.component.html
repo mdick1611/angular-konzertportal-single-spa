@@ -1,17 +1,33 @@
-<mat-card>
-  <mat-card-header>
-    <div mat-card-avatar class="header-image" [style.background-image]="'url(assets/angular-logo.png)'"></div>
-    <mat-card-title>Single SPA</mat-card-title>
-    <mat-card-subtitle>Angular CLI demonstration</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="assets/toulouse-france.jpg" alt="Toulouse France">
-  <mat-card-content>
-    <router-outlet></router-outlet>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-raised-button routerLink="/route1">Route1</a>
-    <a mat-raised-button routerLink="/route2">Route2 (lazy)</a>
-    <a mat-raised-button color="accent" [singleSpaRouterLink]="getHelpUrl()">Open Help (other cli app)</a>
-    <a mat-raised-button color="primary" singleSpaRouterLink="/app1/">App1 (other cli app)</a>
-  </mat-card-actions>
-</mat-card>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="assets/ny.jpg" alt="New York">
+      <div class="carousel-caption">
+        <h3>Featured</h3>
+      </div>
+    </div>
+    <div class="item" *ngFor="let concert of featured">
+      <img src="./assets/{{concert.featuredImage}}" alt="Something">
+      <div class="carousel-caption">
+        <h3>{{concert.name}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
