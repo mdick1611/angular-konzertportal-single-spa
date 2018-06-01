@@ -8,7 +8,7 @@ import 'rxjs/add/operator/filter';
 import { Concert } from './concert';
 
 @Component({
-  selector: 'home-root',
+  selector: 'featured-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

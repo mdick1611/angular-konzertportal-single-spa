@@ -1,4 +1,5 @@
 import { enableProdMode } from '@angular/core';
+import { Router } from '@angular/router';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { platformSingleSpa } from 'single-spa-angular-cli';
 
@@ -9,7 +10,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformSingleSpa.mount('menu').subscribe(({ props, attachUnmount }) => {
+platformSingleSpa.mount('featured', Router).subscribe(({ props, attachUnmount }) => {
   platformBrowserDynamic().bootstrapModule(AppModule).then((module) => {
     attachUnmount(module);
     // Do something with props if you want

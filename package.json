@@ -3,10 +3,10 @@
   "name": "single-spa-angular-cli-exemples",
   "description": "This is an example of examples on how to use [single-spa](https://github.com/CanopyTax/single-spa) && [single-spa-angular-cli](https://github.com/PlaceMe-SAS/single-spa-angular-cli) in a variety of contexts. Right now there are examples with the following technologies:",
   "scripts": {
-    "preinstall": "cd ./apps/menu && npm i && cd ../home && npm i",
-    "ng:lint": "cd ./apps/menu && ng lint && cd ../home && ng lint",
-    "ng:test": "cd ./apps/menu && ng test --watch=false && cd ../home && ng test --watch=false",
-    "ng:build": "cd ./apps/menu && ng build --prod -op ../../build/menu && cd ../home && ng build --prod -op ../../build/home",
+    "preinstall": "cd ./apps/navbar && npm i && cd ../featured && npm i",
+    "ng:lint": "cd ./apps/navbar && ng lint && cd ../featured && ng lint",
+    "ng:test": "cd ./apps/navbar && ng test --watch=false && cd ../featured && ng test --watch=false",
+    "ng:build": "cd ./apps/navbar && ng build --prod -op ../../build/navbar && cd ../featured && ng build --prod -op ../../build/featured",
     "start": "webpack-dev-server --open",
     "build": "webpack --config webpack.config.js"
   },

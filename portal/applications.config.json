@@ -1,15 +1,15 @@
 [
     {
-        "name": "menu",
-        "selector": "menu-root",
-        "baseHref": "/menu",
+        "name": "navbar",
+        "selector": "navbar-root",
+        "baseHref": "/navbar",
         "matchRoute": "/**"
     },
     {
-        "name": "home",
-        "selector": "home-root",
-        "baseHref": "/home",
-        "matchRoute": "/home/",
+        "name": "featured",
+        "selector": "featured-root",
+        "baseHref": "/featured",
+        "matchRoute": "/featured/",
         "isDefaultApp": true
     }
 ]
