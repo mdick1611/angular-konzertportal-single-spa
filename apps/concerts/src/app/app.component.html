@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <h2>Konzerte</h2><br/><br/><br/>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let concert of concerts">
+      <a class="concertItem" href="#">
+        <p><strong>
+          {{concert.name}}
+        </strong><br/>
+        </p>
+        <img class="concertImg" src="assets/bandmember.jpg" alt="Random Name" width="150" height="150">
+      </a>
+      <p>
+        {{concert.events[0]}}<br/>
+        {{concert.events[1]}}
+      </p>
+    </div>
+  </div>
+</div>

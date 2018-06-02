@@ -11,5 +11,18 @@
         "baseHref": "/featured",
         "matchRoute": "/featured/",
         "isDefaultApp": true
+    },
+    {
+        "name": "concerts",
+        "selector": "concerts-root",
+        "baseHref": "/concerts",
+        "matchRoute": "/**"
+    },
+    {
+        "name": "footer",
+        "selector": "footer-root",
+        "baseHref": "/footer",
+        "matchRoute": "/**"
     }
+
 ]
