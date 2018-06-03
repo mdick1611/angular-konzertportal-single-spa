@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "single-spa-angular-cli-exemples",
+  "name": "angular-konzertportal-single-spa",
   "description": "This is an example of examples on how to use [single-spa](https://github.com/CanopyTax/single-spa) && [single-spa-angular-cli](https://github.com/PlaceMe-SAS/single-spa-angular-cli) in a variety of contexts. Right now there are examples with the following technologies:",
   "scripts": {
     "preinstall": "cd ./apps/navbar && npm i && cd ../featured && npm i && cd ../concerts && npm i && cd ../footer && npm i",
